@@ -23,10 +23,6 @@ router.post("/auth/signup", (req, res, next) => {
         return;
     }
 
-    // Check if password is strong:
-    // const regex = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}/
-    // if(!regex.test(password))
-
     // Validation passed
     // Check if username is already taken
     User.findOne({ username }).then((userFromDB) => {
