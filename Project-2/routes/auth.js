@@ -7,7 +7,7 @@ router.get("/auth/signup", (req, res, next) => {
 });
 
 router.post("/auth/signup", (req, res, next) => {
-    const { username, password } = req.body;
+    const { username, password, fitnessLevel, age } = req.body;
 
     // Validation
     // Check if username is empty
@@ -38,7 +38,12 @@ router.post("/auth/signup", (req, res, next) => {
             console.log(hash);
 
             // Create user
-            User.create({ username: username, password: hash })
+            User.create({
+                username: username,
+                password: hash,
+                fitnessLevel: fitnessLevel,
+                age: age,
+            })
                 .then((createdUser) => {
                     console.log(createdUser);
                     res.redirect("/auth/login");

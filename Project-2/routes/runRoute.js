@@ -7,10 +7,35 @@ router.get("/runRoute/add", (req, res, next) => {
 });
 
 router.post("/runRoute", (req, res, next) => {
-    const { name, place, time } = req.body;
+    console.log("BODY: ", req.body);
+    const {
+        image,
+        title,
+        date,
+        time,
+        location,
+        startingPoint,
+        distance,
+        duration,
+        pace,
+        difficultyLevel,
+        organizer,
+    } = req.body;
     // node basic auth: req.session.user
     const userId = req.session.user._id;
-    RunRoute.create({ name, place, time, owner: userId })
+    RunRoute.create({
+        image,
+        title,
+        date,
+        time,
+        location,
+        startingPoint,
+        distance,
+        duration,
+        pace,
+        difficultyLevel,
+        organizer,
+    })
         .then((createdRunRoute) => {
             res.redirect("/runRoute");
         })
@@ -21,17 +46,17 @@ router.post("/runRoute", (req, res, next) => {
 
 router.get("/runRoute", isLoggedIn, (req, res, next) => {
     const userId = req.session.user._id;
-
+    const user = req.session.user;
     const query = {};
     if (req.session.user.role === "user") {
         query.owner = req.session.user._id;
     }
 
     RunRoute.find(query)
-        .populate("owner")
+        //.populate("")
         .then((runRoute) => {
             console.log("runRoute: ", runRoute);
-            res.render("runRoute/index", { runRoute });
+            res.render("runRoute/index", { runRoute, user: user });
         })
         .catch((err) => {
             next(err);
