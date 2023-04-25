@@ -16,7 +16,7 @@
     "express-session": "^1.17.3",
     "hbs": "^4.2.0",
     "mapbox-gl": "^2.14.1",
-    "mongoose": "^7.0.4",
+    "mongoose": "^7.0.5",
     "morgan": "^1.10.0",
     "node": "^19.8.1",
     "serve-favicon": "^2.5.0"
