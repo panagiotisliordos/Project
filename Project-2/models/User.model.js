@@ -5,8 +5,7 @@ const userSchema = new Schema(
     {
         username: {
             type: String,
-            trim: true,
-            required: false,
+            required: true,
             unique: true,
         },
 
@@ -14,6 +13,25 @@ const userSchema = new Schema(
             type: String,
             required: true,
         },
+
+        fitnessLevel: {
+            type: String,
+            enum: ['Beginner', 'Intermediate', 'Advanced'],
+            required: true,
+        },
+
+        age: {
+            type: String,
+            enum: ['18-24', '25-34', '35-44', '45-54', '55-64', '65+'],
+            required: true
+          },
+
+          sex: {
+            type: String,
+            enum: ['Female', 'Male', 'Other'],
+            required: true
+          },
+          
     },
     {
         // this second object adds extra properties: `createdAt` and `updatedAt`
