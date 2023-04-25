@@ -16,22 +16,20 @@ const userSchema = new Schema(
 
         fitnessLevel: {
             type: String,
-            enum: ['Beginner', 'Intermediate', 'Advanced'],
+            //enum: ["Beginner", "Intermediate", "Advanced"],
             required: true,
         },
 
         age: {
             type: String,
-            enum: ['18-24', '25-34', '35-44', '45-54', '55-64', '65+'],
-            required: true
-          },
+            // enum: ["18-24", "25-34", "35-44", "45-54", "55-64", "65+"],
+            required: true,
+        },
 
-          sex: {
+        sex: {
             type: String,
-            enum: ['Female', 'Male', 'Other'],
-            required: true
-          },
-          
+            enum: ["Female", "Male", "Other"],
+        },
     },
     {
         // this second object adds extra properties: `createdAt` and `updatedAt`
