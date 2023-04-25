@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 const RunRouteSchema = new Schema({
     name: String,
     place: String,
-    time: Number,
+    time: String,
     owner: {
         type: Schema.Types.ObjectId,
         ref: "User",
