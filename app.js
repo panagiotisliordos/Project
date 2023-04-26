@@ -12,6 +12,12 @@ const express = require("express");
 // Handles the handlebars
 // https://www.npmjs.com/package/hbs
 const hbs = require("hbs");
+const moment = require("moment");
+
+// Register moment helper
+hbs.registerHelper("moment", function(date, format) {
+  return moment(date).format(format);
+});
 
 const app = express();
 
