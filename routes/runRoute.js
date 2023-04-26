@@ -115,11 +115,6 @@ router.post("/runRoute/search", (req, res, next) => {
       });
   });
 
-//   router.get('/attend', (req, res, next) => {
-//     res.render("attend");
-//   })
-
-
 router.get('/attend/:id', (req, res, next) => {
     const id = req.params.id
     RunRoute.findById(id)
@@ -127,9 +122,5 @@ router.get('/attend/:id', (req, res, next) => {
     .catch(err => next(err))
   });
 
-  
-  
-
-    
     module.exports = router;
 
