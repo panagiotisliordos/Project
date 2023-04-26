@@ -96,8 +96,8 @@ router.post("/runRoute/search", (req, res, next) => {
       query.distance = { $lte: distance };
     }
     if (date) {
-      query.date = date;
-    }
+        query.date = { $gte: date };
+      }
     console.log(query); // to see on terminal if search endpoint receives data.
 
     RunRoute.find(query)
