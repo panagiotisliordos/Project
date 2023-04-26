@@ -1,26 +1,81 @@
-{{#if runRoutes.length}}
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Location</th>
-        <th>Distance</th>
-        <th>Date</th>
-        <th>Organizer</th>
-      </tr>
-    </thead>
-    <tbody>
+ 
+<nav class="navbar navbar-expand-lg bg-secondary">
+    <div clanass="container-fluid">
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarTogglerDemo03"
+            aria-controls="navbarTogglerDemo03"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+        >
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="/">Home
+                    </a>
+                </li>
+
+               
+                 <li class="nav-item">
+                    <a
+                        class="nav-link active text-white"
+                        aria-current="page"
+                        href="/auth/logout"
+                    >Log out</a>
+                </li>
+
+
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="/profile">   Profile   </a>
+                    
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="/runRoute">See all
+                        routes</a>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</nav>
+
+
+
+
+
+
+ {{#if runRoutes.length}}
+  <div class="main-page-routes">
       {{#each runRoutes}}
-        <tr>
-          <td>{{name}}</td>
-          <td>{{location}}</td>
-          <td>{{distance}} km</td>
-          <td>{{date}}</td>
-          <td>{{organizer.email}}</td>
-        </tr>
+       <div class="all-the-cards">
+            <div class="card">
+           <img src="{{image}}" class="card-img-top" alt="..." width="50px" >
+        <div class="card-body">
+            <h3 class="card-title">{{title}}</h3>
+            <h6>Date: {{date}}</h6>
+            <h6>Time:{{time}}</h6>
+            <h6>Starting point:{{startingPoint}}</h6>
+            <h6>Distance:{{distance}}</h6>
+            <h6>Duration:{{duration}}</h6>
+            <h6>Location:{{location}}</h6>
+            <h6>Pace:{{pace}}</h6>
+            <h6>Difficulty level:{{difficultyLevel}}</h6>
+            <h6>Organizer:{{organizer}}</h6>
+  
+        </div>
+            </div>
+      </div>
       {{/each}}
-    </tbody>
-  </table>
+      </div>
+  
 {{else}}
   <p>No results found</p>
 {{/if}}
+
