@@ -35,6 +35,7 @@ router.post("/runRoute", (req, res, next) => {
         duration,
         pace,
         difficultyLevel,
+        organizer})
         .then((createdRunRoute) => {
             res.redirect("/runRoute");
         })
