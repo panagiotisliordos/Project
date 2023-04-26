@@ -52,7 +52,7 @@
 
     <h1>All the routes</h1>
 <div class="main-page-routes">
-    {{#each runRoute}}
+    {{#each runRouteCopy}}
     <div class="all-the-cards">
             <div class="card">
            <img src="{{image}}" class="card-img-top" alt="..." width="50px" >
@@ -67,7 +67,7 @@
             <h6>Pace:{{pace}}</h6>
             <h6>Difficulty level:{{difficultyLevel}}</h6>
             <h6>Organizer:{{organizer}}</h6>
-            <a href="#" class="btn btn-primary">Attend</a>
+            <a href="/attend/{{_id}}" class="btn btn-primary">Attend</a>
         </div>
             </div>
 

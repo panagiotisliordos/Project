@@ -55,12 +55,13 @@ router.get("/runRoute", isLoggedIn, (req, res, next) => {
     }
 
     RunRoute.find(query)
-
         //.populate("")
-
         .then((runRoute) => {
-            console.log("runRoute: ", runRoute);
-            res.render("runRoute/index", { runRoute, user: user });
+            console.log("runRoute: ", runRoute[0].date.toDateString());
+            var runRouteCopy = [...runRoute]
+            runRouteCopy.forEach(item => item.date = item.date.toDateString())
+            console.log(runRouteCopy)
+            res.render("runRoute/index", { runRouteCopy, user: user });
         })
         .catch((err) => {
             next(err);
@@ -126,8 +127,21 @@ router.post("/runRoute/search", (req, res, next) => {
       });
   });
 
- 
+//   router.get('/attend', (req, res, next) => {
+//     res.render("attend");
+//   })
+
+
+router.get('/attend/:id', (req, res, next) => {
+    const id = req.params.id
+    RunRoute.findById(id)
+    .then(dataFromDB => res.render("attend", { dataFromDB }))
+    .catch(err => next(err))
+  });
+
   
   
 
-module.exports = router;
+    
+    module.exports = router;
+
