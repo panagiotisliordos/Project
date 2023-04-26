@@ -38,8 +38,29 @@
     </div>
 </nav>
 
-<h1>Hello {{user.username}}</h1>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="profilecard">
+                <div class="card">
+                    <img
+                        src="https://cdn.discordapp.com/attachments/1099951280627122176/1100711621908774923/fitsum-admasu-oGv9xIl7DkY-unsplash.jpg"
+                        class="card-img-top"
+                        alt="..."
+                        width="50px"
+                    />
+                    <div class="profileInfo">
+                        <h3 class="profileInfo">Hello {{user.username}}!!</h3>
+                        <h6>Personal info:</h6>
+                        <h6>Age: {{user.age}}</h6>
+                        <h6>Fitness level: {{user.fitnessLevel}}</h6>
 
-<!--
-<a href="/runRoute">See all routes</a>
-<a href="/auth/logout">Logout</a>-->
+                        <a href="/runRoute/add" class="btn btn-dark">Add a new
+                            route
+                            {{user.username}}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
