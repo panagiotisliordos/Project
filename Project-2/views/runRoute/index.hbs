@@ -50,12 +50,55 @@
         </div>
     </div>
 </nav>
+    <h1>All the routes</h1>
+<div class="main-page-routes">
+    {{#each runRoute}}
+    <div class="all-the-cards">
+            <div class="card">
+           <img src="{{image}}" class="card-img-top" alt="..." width="50px" >
+        <div class="card-body">
+            <h3 class="card-title">{{title}}</h3>
+            <h6>Date: {{date}}</h6>
+            <h6>Time:{{time}}</h6>
+            <h6>Starting point:{{startingPoint}}</h6>
+            <h6>Distance:{{distance}}</h6>
+            <h6>Duration:{{duration}}</h6>
+            <h6>Location:{{location}}</h6>
+            <h6>Pace:{{pace}}</h6>
+            <h6>Difficulty level:{{difficultyLevel}}</h6>
+            <h6>Organizer:{{organizer}}</h6>
+            <a href="#" class="btn btn-primary">Attend</a>
+        </div>
+            </div>
+    </div>
+{{/each}}
+</div>
+<!--<a href="/runRoute/add">Add a route</a>
+<a href="/profile">User profile</a>-->
 
-<h1>All the routes</h1>
-{{#each runRoute}}
-    <div>
+{{!-- <div class="card" style="width: 18rem;">
+    <img src="{{image}}" class="card-img-top" alt="..." >
+    <div class="card-body">
+    <h4 class="card-title">{{title}}</h4>
+    <h2>Date: {{date}}</h2>
+        <h4>Time:{{time}}</h4>
+        <h4>Starting point:{{startingPoint}}</h4>
+        <h4>Distance:{{distance}}</h4>
+        <h4>Duration:{{duration}}</h4>
+        <h4>Location:{{location}}</h4>
+        <h4>Pace:{{pace}}</h4>
+        <h4>Difficulty level:{{difficultyLevel}}</h4>
+        <h4>Organizer:{{organizer}}</h4>
+    <a href="#" class="btn btn-primary">Attend</a>
+  </div>
+</div> --}}
+
+
+    {{!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> --}}
+
+      {{!-- <div class="card">
         <h2>Title: {{title}}</h2>
-        <h2>Image: {{image}}</h2>
+        <img src="{{image}}" class="card-img-top" width="10px">
         <h2>Date: {{date}}</h2>
         <h2>Time:{{time}}</h2>
         <h2>Location:{{location}}</h2>
@@ -65,11 +108,6 @@
         <h2>Pace:{{pace}}</h2>
         <h2>Difficulty level:{{difficultyLevel}}</h2>
         <h2>Organizer:{{organizer}}</h2>
-       
-
         <!--  <a href="/runRoute/{{_id}}/delete">Delete this route </a>-->
-    </div>
-   
-{{/each}}
-<!--<a href="/runRoute/add">Add a route</a>
-<a href="/profile">User profile</a>-->
+    </div> --}}
+

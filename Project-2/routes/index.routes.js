@@ -3,7 +3,8 @@ const router = express.Router();
 const { isLoggedIn } = require("../middleware/route-guard");
 const RunRoute = require("../models/RunRoute");
 
-const data=[{
+const data = [
+{
     image: 'https://content.r9cdn.net/rimg/dimg/94/77/3c308be3-lm-1035-172eedc4c70.jpg?width=1366&height=768&xhint=2600&yhint=3239&crop=true',
     title: 'Historical Berlin Run',
     date: new Date(2023, 05, 19),
@@ -95,7 +96,7 @@ const data=[{
     organizer: "Peter"
 },
 {
-    "image": 'https://www.berlin.de/binaries/asset/image_assets/3877031/source/1677838307/624x468/',
+    "image": 'https://www.zoo-berlin.de/fileadmin/_processed_/f/e/csm_Flusspferdhaus_Location_f38c8f5b95.jpg',
     "title": 'Tiergarten Tour',
     "date": new Date(2023, 05, 15),
     "time": "07:00",
@@ -106,7 +107,8 @@ const data=[{
     "pace": "7:30",
     "difficultyLevel": "beginner-intermediate",
     "organizer": "Ben"
-}, {
+}, 
+{
     "image": 'https://media.timeout.com/images/101285069/750/422/image.jpg',
     "title": 'Run through the Forest',
     "date": new Date(2023, 05, 17),
@@ -118,15 +120,68 @@ const data=[{
     "pace": "7:45",
     "difficultyLevel": "intermediate-advanced",
     "organizer": "Lisa"
-}]
+},
+{
+    image: 'https://upload.wikimedia.org/wikipedia/commons/a/a4/Havel_Berlin.jpg',
+    title: 'Grunewald Forest and Teufelsberg Hill Run',
+    date: new Date(2023, 06, 08),
+    time: "09:00",
+    location: 'Grunewald',
+    startingPoint: 'S-Bahn Grunewald Station',
+    distance: "15 km",
+    duration: "2 hours",
+    pace: "8:00",
+    difficultyLevel: "advanced",
+    organizer: "Tom"
+},
+{
+    image: 'https://www.visitberlin.de/system/files/styles/visitberlin_hero_visitberlin_desktop_2x/private/image/Mauerpark_per%20Rad_c_visitBerlin%3B%20Foto_Rasmus_KlaRas-Verlag%20%281%29_DL_PPT_0.jpg?h=48ee214e&itok=CeyQm-kR',
+    title: 'Berlin Wall and Mauerpark Run',
+    date: new Date(2023, 06, 10),
+    time: "10:00",
+    location: 'Prenzlauer Berg',
+    startingPoint: 'Mauerpark',
+    distance: "8 km",
+    duration: "1 hour",
+    pace: "6:30",
+    difficultyLevel: "beginner-intermediate",
+    organizer: "Jenny"
+},
+{
+    image: 'https://cdn.tourbytransit.com/berlin/images/Berlin-Dahlem-Botanical-Garden.jpg',
+    title: 'Botanical Garden Run',
+    date: new Date(2023, 06, 27),
+    time: "10:00",
+    location: 'Steglitz-Zehlendorf',
+    startingPoint: 'Botanischer Garten Station',
+    distance: "10 km",
+    duration: "1.5 hours",
+    pace: "7",
+    difficultyLevel: "beginner-intermediate",
+    organizer: "bo"
+}
+]
+
+RunRoute.findOne({})
+  .then(dataDB => {
+    if (!dataDB) {
+      RunRoute.insertMany(data)
+        .then(data => {
+          console.log(`Success: Added ${data.length} routes to the db`)
+        })
+        .catch(err => console.log(err))
+    } else {
+      console.log("Data already exists in the database");
+    }
+  })
+  .catch(err => console.log(err))
 
 
-
-RunRoute.insertMany(data)
- 	.then(data => {
- 		console.log(`Success: Added ${data.length} routes to the db`)
- 	})
- 	.catch(err => console.log(err))
+// RunRoute.insertMany(data)
+//  	.then(data => {
+//  		console.log(`Success: Added ${data.length} routes to the db`)
+//  	})
+//  	.catch(err => console.log(err))
 
 /* GET home page */
 router.get("/", (req, res, next) => {

@@ -3,7 +3,7 @@
     {
         "image": "'https://images.squarespace-cdn.com/content/v1/607e8df959d84a1a0001c94d/1618912068285-UHFPBB0M93AE6ISMHG6S/image-asset.jpeg?format=1000w'",
         "title": "Run on Maybachufer",
-        "date": new Date (2023, 05, 13),
+        "date": "new Date (2023, 05, 13)",
         "time": "'06:30'",
         "location": "Neukölln",
         "startingPoint":"Hermanplatz",
