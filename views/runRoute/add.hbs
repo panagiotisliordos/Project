@@ -1,51 +1,64 @@
 <h1>Add a route</h1>
 <form action="/runRoute" method="post">
 
-    <label for="image">Image: </label>
-    <input type="text" name="image" placeholder="paste an img url here" />
-    <br />
+   <div class="container-fluid">
+  <div class="row">
+    <div class="col-md-6">
+      <table class="table">
+        <tbody>
+          <tr>
+            <td><label for="image">Image:</label></td>
+            <td><input type="text" class="form-control" id="image" name="image" placeholder="Paste an img url here"></td>
+          </tr>
+          <tr>
+            <td><label for="title">Title:</label></td>
+            <td><input type="text" class="form-control" id="title" name="title"></td>
+          </tr>
+          <tr>
+            <td><label for="date">Date:</label></td>
+            <td><input type="date" class="form-control" id="date" name="date"></td>
+          </tr>
+          <tr>
+            <td><label for="time">Time:</label></td>
+            <td><input type="text" class="form-control" id="time" name="time"></td>
+          </tr>
+          <tr>
+            <td><label for="location">Location:</label></td>
+            <td><input type="text" class="form-control" id="location" name="location"></td>
+          </tr>
+          <tr>
+            <td><label for="startingPoint">Starting point:</label></td>
+            <td><input type="text" class="form-control" id="startingPoint" name="startingPoint"></td>
+          </tr>
+          <tr>
+            <td><label for="distance">Distance:</label></td>
+            <td><input type="text" class="form-control" id="distance" name="distance"></td>
+          </tr>
+          <tr>
+            <td><label for="duration">Duration:</label></td>
+            <td><input type="text" class="form-control" id="duration" name="duration"></td>
+          </tr>
+          <tr>
+            <td><label for="pace">Pace:</label></td>
+            <td><input type="text" class="form-control" id="pace" name="pace"></td>
+          </tr>
+          <tr>
+            <td><label for="difficultyLevel">Difficulty level:</label></td>
+            <td><input type="text" class="form-control" id="difficultyLevel" name="difficultyLevel"></td>
+          </tr>
+          <tr>
+            <td><label for="organizer">Organizer:</label></td>
+            <td><input type="text" class="form-control" id="organizer" name="organizer"></td>
+          </tr>
+        </tbody>
+      </table>
+      <button type="submit" class="btn btn-primary">Add this route</button>
+    </div>
+    <div class="col-md-6">
+      <img src="your-image-source.jpg" class="img-fluid" alt="Your Image">
+    </div>
+  </div>
+</div>
 
-
-    <label for="title">Title: </label>
-    <input type="text" name="title" />
-    <br />
-
-    <label for="date">Date: </label>
-    <input type="date" name="date" />
-    <br />
-
-    <label for="time">Time: </label>
-    <input type="text" name="time" />
-    <br />
-
-    <label for="location">Location: </label>
-    <input type="text" name="location" />
-    <br />
-
-    <label for="startingPoint">Starting point: </label>
-    <input type="text" name="startingPoint" />
-    <br />
-
-    <label for="distance">Distance: </label>
-    <input type="text" name="distance" />
-    <br />
-
-    <label for="duration">Duration: </label>
-    <input type="text" name="duration" />
-    <br />
-
-    <label for="pace">Pace: </label>
-    <input type="text" name="pace" />
-    <br />
-
-    <label for="difficultyLevel">Difficulty level: </label>
-    <input type="text" name="difficultyLevel" />
-    <br />
-
-    <label for="oranizer">Organizer: </label>
-    <input type="text" name="organizer" />
-    <br />
-
-    <button type="submit">Add this route</button>
 
 </form>
