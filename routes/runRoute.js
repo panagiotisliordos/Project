@@ -6,10 +6,7 @@ router.get("/runRoute/add", (req, res, next) => {
     res.render("runRoute/add");
 });
 
-
-
 router.post("/runRoute", (req, res, next) => {
-
     console.log("BODY: ", req.body);
     const {
         image,
@@ -90,10 +87,8 @@ router.get("/runRoute/:id/delete", (req, res, next) => {
 
 router.post("/runRoute/search", (req, res, next) => {
     const { location, distance, date } = req.body;
-    //const userId = req.session.user._id;
-
     const query = { };
-    
+
     if (location) {
       query.location = { $regex: new RegExp(location, "i") }; 
     }
@@ -105,14 +100,7 @@ router.post("/runRoute/search", (req, res, next) => {
     }
     console.log(query); // to see on terminal if search endpoint receives data.
 
-   
-      
-
-    
-
-
     RunRoute.find(query)
-    //   .populate("organizer")
       .then((runRoutes) => {
         
         console.log("runRoutes: ", runRoutes);
