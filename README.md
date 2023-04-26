@@ -1,1 +1,1 @@
-# rund and have fun in berlin
+# run and have fun in berlin
