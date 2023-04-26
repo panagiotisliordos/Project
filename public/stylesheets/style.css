@@ -15,7 +15,7 @@ a {
 }
 
 h1 {
-    color: #444849;
+    color: #616666;
     text-align: center;
     margin-top: 20px;
 }
@@ -46,6 +46,37 @@ p {
     flex-wrap: wrap;
     justify-content: space-between;
 } */
+
+.bg-image {
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("https://cdn.discordapp.com/attachments/1099951280627122176/1100711622307225671/jozsef-hocza-BTur1pF9FR0-unsplash.jpg");
+    height: 120vh;
+    background-position: center;
+    background-size: cover;
+}
+.runandfun {
+    color: aliceblue;
+    font-size: 80px;
+    font-style: normal;
+}
+.profileInfo {
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    text-align: center;
+}
+.profileInfo h6 {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 10px;
+}
+.container {
+    text-align: center;
+}
 
 .attend-card {
     margin: 20px;
