@@ -35,14 +35,42 @@
                 </li>
                 
             </ul>
+             <!--
 <form class="d-flex" role="search" method="POST" action="/runRoute/search">
 <input class="form-control me-2" type="text" placeholder="Location" aria-label="Location" name="location">
+ 
   <label class="sr-only" for="distanceInput"></label>
   <input type="string" class="form-control mr-sm-2" style="width: 110px; margin-right: 10px;" id="distanceInput" name="distance" placeholder="Distance">
+ 
+    <div class="input-group">
+    <input type="text" class="form-control mr-sm-2" style="width: 110px; margin-right: 10px;" name="minDistance" placeholder="Min Distance">
+    <input type="text" class="form-control mr-sm-2" style="width: 110px; margin-right: 10px;" name="maxDistance" placeholder="Max Distance">
+  </div>
   <label class="sr-only" for="dateInput"></label>
   <input type="date" class="form-control mr-sm-2" style="width: 235px; margin-right: 10px;" id="dateInput" name="date">
   <button class="btn btn-outline-dark" type="submit">Search</button>
 </form>
+ -->
+
+<form class="d-flex" role="search" method="POST" action="/runRoute/search">
+  <input class="form-control me-2" type="text" placeholder="Location" aria-label="Location" name="location">
+  <div class="input-group">
+    <select id="distance"  class="form-control mr-sm-2" style="width: 10px; margin-right: 10px;" name="distance" placeholder="Distance">
+      <option value="" disabled selected>Distance</option>
+      <option value="1">0-5</option>
+      <option value="2">5-10 km</option>
+      <option value="3">10+ km</option>
+    </select>
+  </div>
+  <label class="sr-only" for="dateInput"></label>
+  <input type="date" class="form-control mr-sm-2" style="width: 235px; margin-right: 10px;" id="dateInput" name="date">
+  <button class="btn btn-outline-dark" type="submit">Search</button>
+</form>
+
+
+
+
+
 
 
               
