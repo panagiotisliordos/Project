@@ -1,0 +1,26 @@
+{{#if runRoutes.length}}
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Location</th>
+        <th>Distance</th>
+        <th>Date</th>
+        <th>Organizer</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each runRoutes}}
+        <tr>
+          <td>{{name}}</td>
+          <td>{{location}}</td>
+          <td>{{distance}} km</td>
+          <td>{{date}}</td>
+          <td>{{organizer.email}}</td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+{{else}}
+  <p>No results found</p>
+{{/if}}

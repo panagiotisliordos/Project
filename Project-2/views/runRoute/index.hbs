@@ -35,21 +35,35 @@
                 </li>
                 
             </ul>
-            <form class="d-flex" role="search">
-                <input
-                    class="form-control me-2"
-                    type="search"
-                    placeholder="Search"
-                    aria-label="Search"/>
-                <button
-                    class="btn btn-outline-dark"
-                    type="submit"
-                >Search</button>
-            </form>
+<form class="d-flex" role="search" method="POST" action="/runRoute/search">
+  <select class="form-select me-2" aria-label="Location" name="location">
+    <option selected>Location</option>
+    <option value="Charlottenburg-Wilmersdorf">Charlottenburg-Wilmersdorf</option>
+    <option value="Friedrichshain-Kreuzberg">Friedrichshain-Kreuzberg</option>
+    <option value="Lichtenberg">Lichtenberg</option>
+    <option value="Marzahn-Hellersdorf">Marzahn-Hellersdorf</option>
+    <option value="Mitte">Mitte</option>
+    <option value="Neukölln">Neukölln</option>
+    <option value="Pankow">Pankow</option>
+    <option value="Reinickendorf">Reinickendorf</option>
+    <option value="Spandau">Spandau</option>
+    <option value="Steglitz-Zehlendorf">Steglitz-Zehlendorf</option>
+    <option value="Tempelhof-Schöneberg">Tempelhof-Schöneberg</option>
+    <option value="Treptow-Köpenick">Treptow-Köpenick</option>
+  </select>
+  <label class="sr-only" for="distanceInput"></label>
+  <input type="number" class="form-control mr-sm-2" style="width: 110px; margin-right: 10px;" id="distanceInput" name="distance" placeholder="Distance">
+  <label class="sr-only" for="dateInput"></label>
+  <input type="date" class="form-control mr-sm-2" style="width: 235px; margin-right: 10px;" id="dateInput" name="date">
+  <button class="btn btn-outline-dark" type="submit">Search</button>
+</form>
+
+
               
         </div>
     </div>
 </nav>
+
     <h1>All the routes</h1>
 <div class="main-page-routes">
     {{#each runRoute}}
@@ -70,6 +84,7 @@
             <a href="#" class="btn btn-primary">Attend</a>
         </div>
             </div>
+
     </div>
 {{/each}}
 </div>
