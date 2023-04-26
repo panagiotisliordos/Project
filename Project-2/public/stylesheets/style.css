@@ -3,6 +3,12 @@ body {
     font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
+.main-page-routes {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
 a {
     font-size: 30px;
     color: #444849;
@@ -10,11 +16,33 @@ a {
 
 h1 {
     color: #444849;
-    font-size: 65px;
     text-align: center;
+    margin-top: 20px;
 }
 p {
     text-align: center;
     font-size: 40px;
     color: #444849;
 }
+
+.card-img-top {
+    width: 500px;
+    height: 350px;
+}
+
+.card {
+    margin: 20px;
+    display: flex;
+    justify-content: space-around;
+    width: 500px;
+}
+
+.collapse navbar-collapse {
+    background-color: rgb(225, 170, 219);
+}
+
+/* .all-the-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+} */
