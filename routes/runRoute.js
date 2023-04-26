@@ -92,9 +92,15 @@ router.post("/runRoute/search", (req, res, next) => {
     if (location) {
       query.location = { $regex: new RegExp(location, "i") }; 
     }
-    if (distance) {
-      query.distance = { $lte: distance };
-    }
+    if (distance === "1") {
+        query.distance = { $lte: 5 };
+      }
+      else if (distance === "2") {
+        query.distance = { $gte: 5, $lte: 10 };
+      }
+      else if (distance === "3") {
+        query.distance = { $gte: 10 };
+      }
     if (date) {
       query.date = date;
     }
