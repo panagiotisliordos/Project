@@ -197,4 +197,10 @@ router.get("/profile", isLoggedIn, (req, res, next) => {
     res.render("profile", { user: user });
 });
 
+
+router.get("/runRoute/searchResults", (req, res, next) => {
+    res.render("runRoute/searchResults");
+  });
+  
+
 module.exports = router;

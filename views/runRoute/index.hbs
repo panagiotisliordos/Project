@@ -36,23 +36,9 @@
                 
             </ul>
 <form class="d-flex" role="search" method="POST" action="/runRoute/search">
-  <select class="form-select me-2" aria-label="Location" name="location">
-    <option selected>Location</option>
-    <option value="Charlottenburg-Wilmersdorf">Charlottenburg-Wilmersdorf</option>
-    <option value="Friedrichshain-Kreuzberg">Friedrichshain-Kreuzberg</option>
-    <option value="Lichtenberg">Lichtenberg</option>
-    <option value="Marzahn-Hellersdorf">Marzahn-Hellersdorf</option>
-    <option value="Mitte">Mitte</option>
-    <option value="Neukölln">Neukölln</option>
-    <option value="Pankow">Pankow</option>
-    <option value="Reinickendorf">Reinickendorf</option>
-    <option value="Spandau">Spandau</option>
-    <option value="Steglitz-Zehlendorf">Steglitz-Zehlendorf</option>
-    <option value="Tempelhof-Schöneberg">Tempelhof-Schöneberg</option>
-    <option value="Treptow-Köpenick">Treptow-Köpenick</option>
-  </select>
+<input class="form-control me-2" type="text" placeholder="Location" aria-label="Location" name="location">
   <label class="sr-only" for="distanceInput"></label>
-  <input type="number" class="form-control mr-sm-2" style="width: 110px; margin-right: 10px;" id="distanceInput" name="distance" placeholder="Distance">
+  <input type="string" class="form-control mr-sm-2" style="width: 110px; margin-right: 10px;" id="distanceInput" name="distance" placeholder="Distance">
   <label class="sr-only" for="dateInput"></label>
   <input type="date" class="form-control mr-sm-2" style="width: 235px; margin-right: 10px;" id="dateInput" name="date">
   <button class="btn btn-outline-dark" type="submit">Search</button>
@@ -66,7 +52,7 @@
 
     <h1>All the routes</h1>
 <div class="main-page-routes">
-    {{#each runRoute}}
+    {{#each runRouteCopy}}
     <div class="all-the-cards">
             <div class="card">
            <img src="{{image}}" class="card-img-top" alt="..." width="50px" >
@@ -81,7 +67,7 @@
             <h6>Pace:{{pace}}</h6>
             <h6>Difficulty level:{{difficultyLevel}}</h6>
             <h6>Organizer:{{organizer}}</h6>
-            <a href="#" class="btn btn-primary">Attend</a>
+            <a href="/attend/{{_id}}" class="btn btn-primary">Attend</a>
         </div>
             </div>
 

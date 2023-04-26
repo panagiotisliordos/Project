@@ -6,6 +6,8 @@ router.get("/runRoute/add", (req, res, next) => {
     res.render("runRoute/add");
 });
 
+
+
 router.post("/runRoute", (req, res, next) => {
 
     console.log("BODY: ", req.body);
@@ -53,12 +55,13 @@ router.get("/runRoute", isLoggedIn, (req, res, next) => {
     }
 
     RunRoute.find(query)
-
         //.populate("")
-
         .then((runRoute) => {
-            console.log("runRoute: ", runRoute);
-            res.render("runRoute/index", { runRoute, user: user });
+            console.log("runRoute: ", runRoute[0].date.toDateString());
+            var runRouteCopy = [...runRoute]
+            runRouteCopy.forEach(item => item.date = item.date.toDateString())
+            console.log(runRouteCopy)
+            res.render("runRoute/index", { runRouteCopy, user: user });
         })
         .catch((err) => {
             next(err);
@@ -87,12 +90,12 @@ router.get("/runRoute/:id/delete", (req, res, next) => {
 
 router.post("/runRoute/search", (req, res, next) => {
     const { location, distance, date } = req.body;
-    const userId = req.session.user._id;
+    //const userId = req.session.user._id;
 
-    const query = { organizer: userId };
+    const query = { };
     
     if (location) {
-      query.location = location;
+      query.location = { $regex: new RegExp(location, "i") }; 
     }
     if (distance) {
       query.distance = { $lte: distance };
@@ -102,17 +105,43 @@ router.post("/runRoute/search", (req, res, next) => {
     }
     console.log(query); // to see on terminal if search endpoint receives data.
 
+   
+      
+
+    
+
 
     RunRoute.find(query)
-      .populate("organizer")
+    //   .populate("organizer")
       .then((runRoutes) => {
+        
         console.log("runRoutes: ", runRoutes);
+        runRoutes.forEach((route)=> {
+            console.log('location:', route.location);
+            console.log('organizer:', route.organizer);
+        });
         res.render("runRoute/searchResults", { runRoutes });
       })
       .catch((err) => {
         next(err);
       });
   });
+
+//   router.get('/attend', (req, res, next) => {
+//     res.render("attend");
+//   })
+
+
+router.get('/attend/:id', (req, res, next) => {
+    const id = req.params.id
+    RunRoute.findById(id)
+    .then(dataFromDB => res.render("attend", { dataFromDB }))
+    .catch(err => next(err))
+  });
+
+  
   
 
-module.exports = router;
+    
+    module.exports = router;
+
