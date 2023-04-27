@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-secondary">
+<nav class="navbar navbar-expand-lg bg-lightblue">
     <div clanass="container-fluid">
         <button
             class="navbar-toggler"
@@ -9,34 +9,32 @@
             aria-expanded="false"
             aria-label="Toggle navigation"
         >
-            <span class="navbar-toggler-icon"></span>
+            <span class="navbar-toggler-icon">Menu</span>
         </button>
 
         <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="/">Home
+                    <a class="nav-link text-dark" href="/">Home
                     </a>
                 </li>
 
                 <li class="nav-item">
                     <a
-                        class="nav-link active text-white"
+                        class="nav-link active text-dark"
                         aria-current="page"
                         href="/auth/signup"
                     >Sign Up</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="/auth/login">Log in</a>
+                    <a class="nav-link text-dark" href="/auth/login">Log in</a>
                 </li>
-               <!-- <li class="nav-item">
-                    <a class="nav-link text-white" href="/runRoute">See all
-                        routes</a>-->
+              
                 </li>
                  <li class="nav-item">
                     <a
-                        class="nav-link active text-white"
+                        class="nav-link active text-dark"
                         aria-current="page"
                         href="/auth/logout"
                     >Log out</a>
@@ -44,36 +42,46 @@
 
 
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="/profile">   Profile   </a>
+                    <a class="nav-link text-dark" href="/profile">   Profile   </a>
                     
                 </li>
+              
+                 
             </ul>
+          
 
         </div>
+       
     </div>
+      
 </nav>
 
-{{!-- <p>Welcome Berliner!</p> --}}
-{{!-- <p>Willkommen in Berlin, where the only thing faster than our runners is the U-Bahn.</p> --}}
-<!--<h1>Where the runners are as tough as our winters.</h1>
-<h1>Berlin: Where the beer is cold and the runners are hot.</h1>
-<h1>or</h1>
-<h1>Where the beer is cold and the runners are hot.</h1>
-<h1>or</h1>
-<h1>In Berlin, we don't stop running when we're tired. We stop when we're at a beer garden.</h1>
-<h1>or</h1>
-<h1>Running in Berlin is like Forrest Gump's box of chocolates - you never know what you're gonna get.</h1>
--->
-  <div class="container-fluid bg-image">
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <ul class="list-unstyled float-end">
+        <li><a href="#intro">Intro</a></li>
+        <li><a href="#liability">Liability</a></li>
+        <li><a href="#random">Random</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+  <div class="container-fluid bg-image rounded-circle" >
+    
 		
 <h1 class="runandfun">run and fun through Berlin!</h1>
 	  </div>
+    
 
 	  <div class="container-fluid">
-		<div class="row my-5 text-center justify-content-center align-items-center">
+		<div class="row my-5 text-center justify-content-center align-items-center ">
+     
 			<div class="col-lg-4 col-lg-8 ">
-				<h2  style="font-size: 60px">Intro</h2>
-		<p style="font-size: 30px" >	"Welcome to our running community in Berlin! We're thrilled to have you here and can't wait to get to know you better. Whether you're a seasoned runner or just starting out, we believe that running is about more than just getting from point A to point B. It's about the joy of movement, the satisfaction of reaching a goal, and the camaraderie of being part of a community.
+				<h2 id="intro" style="font-size: 60px">Intro</h2>
+		<p style="font-size: 30px; text-align:justify;">	"Welcome to our running community in Berlin! We're thrilled to have you here and can't wait to get to know you better. Whether you're a seasoned runner or just starting out, we believe that running is about more than just getting from point A to point B. It's about the joy of movement, the satisfaction of reaching a goal, and the camaraderie of being part of a community.
 
 At our core, we believe that running is a celebration of life. It's a chance to see the city in a new way, to connect with other runners from around the world, and to challenge yourself in new and exciting ways. Whether you're running along the Spree River, exploring the historic streets of Mitte, or tackling the hills of Grunewald, there's something truly special about running in Berlin.
 
@@ -83,9 +91,9 @@ So what are you waiting for? Join our community today and start celebrating the 
        </p>
 			</div>
            
-			<div class="col-md-4 col-md-8">
-				<h2 style="font-size: 60px" >Liability insurance</h2>
-         <p style="font-size: 30px" > "At our core, we believe that running is about more than just physical fitness - it's about personal responsibility. While we're here to provide you with the tools and resources you need to get the most out of your running experience in Berlin, we also believe that every runner has a responsibility to themselves and to others.
+	  <div class="col-md-4 col-md-8">
+				<h2 id="liability" style="font-size: 60px" >Liability insurance</h2>
+         <p style="font-size: 30px; text-align:justify;" > "At our core, we believe that running is about more than just physical fitness - it's about personal responsibility. While we're here to provide you with the tools and resources you need to get the most out of your running experience in Berlin, we also believe that every runner has a responsibility to themselves and to others.
 
 When you hit the pavement with our app, you're not just a user - you're part of a community. As such, we ask that you take responsibility for your own safety and well-being, as well as the safety of those around you. This means taking steps to ensure that you're properly prepared for your runs, whether that means staying hydrated, wearing reflective gear, or running in well-lit areas.
 
@@ -93,7 +101,33 @@ It also means being aware of your surroundings and being respectful of other run
 
 So let's all take responsibility for our own running experiences, and work together to make running in Berlin a safe, enjoyable, and fulfilling experience for everyone."          
         </p>
+	  </div>
+			<div class="col-md-4 col-md-8">
+				<h2 id="random" style="font-size: 60px" >Random</h2>
+        <br>
+       
+         <p style="font-size: 30px" >   
+          
+            Where the runners are as tough as our winters.
+          </p>  
+        <br>
+         
+          <img src="/images/ethan-unzicker-wwXmpJWVHf0-unsplash.jpg" alt="the img" height="200"width="300">
+       <p style="font-size: 30px" >  
+            Where the beer is cold and the runners are hot.
+           </p>
+
+          <img src="/images/raphael-renter-ccqZNK_gwN0-unsplash.jpg" alt="the img" height="200"width="300">
+        <br>
+        <p style="font-size: 30px" >  
+            In Berlin, we don't stop running when we're tired. We stop when we're at a beer garden.
+            </p> 
+            <img src="/images/biergarten.jpg" alt="the img" height="200"width="300">
+          <br>
+          <p style="font-size: 30px" >  
+            Running in Berlin is like Forrest Gump's box of chocolates - you never know what you're gonna get.
+
+        </p>
 			</div>
-			
 		</div>
 	  </div>

@@ -108,6 +108,7 @@ footer {
 }
 
 
+
 * {
     &:after,
     &:before {
@@ -227,6 +228,7 @@ a {
 .cancel-btn:hover {
   color: #007bb6;
 }
+
 
 
 

@@ -90,26 +90,32 @@ router.get("/runRoute/:id/delete", (req, res, next) => {
 });
 
 router.post("/runRoute/search", (req, res, next) => {
-  const { location, distance, date } = req.body;
-  const query = {};
 
-  if (location) {
-    query.location = { $regex: new RegExp(location, "i") };
-  }
-  if (distance) {
-    query.distance = { $lte: distance };
-  }
-  if (date) {
-    query.date = { $gte: date };
-  }
-  console.log(query); // to see on terminal if search endpoint receives data.
+    const { location, date } = req.body;
+    const query = { };
 
-  RunRoute.find(query)
-    .then((runRoutes) => {
-      console.log("runRoutes: ", runRoutes);
-      runRoutes.forEach((route) => {
-        console.log("location:", route.location);
-        console.log("organizer:", route.organizer);
+    if (location) {
+      query.location = { $regex: new RegExp(location, "i") }; 
+    }
+    
+    if (date) {
+        query.date = { $gte: date };
+      }
+    console.log(query); // to see on terminal if search endpoint receives data.
+
+    RunRoute.find(query)
+      .then((runRoutes) => {
+        
+        console.log("runRoutes: ", runRoutes);
+        runRoutes.forEach((route)=> {
+            console.log('location:', route.location);
+            console.log('organizer:', route.organizer);
+        });
+        res.render("runRoute/searchResults", { runRoutes });
+      })
+      .catch((err) => {
+        next(err);
+
       });
       res.render("runRoute/searchResults", { runRoutes });
     })
