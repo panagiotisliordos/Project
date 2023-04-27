@@ -86,15 +86,13 @@ router.get("/runRoute/:id/delete", (req, res, next) => {
 });
 
 router.post("/runRoute/search", (req, res, next) => {
-    const { location, distance, date } = req.body;
+    const { location, date } = req.body;
     const query = { };
 
     if (location) {
       query.location = { $regex: new RegExp(location, "i") }; 
     }
-    if (distance) {
-      query.distance = { $lte: distance };
-    }
+    
     if (date) {
         query.date = { $gte: date };
       }
