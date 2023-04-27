@@ -1,6 +1,5 @@
 @import url(https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css);
 
-
 body {
     padding: 50px;
     font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
@@ -107,81 +106,78 @@ footer {
     font-size: 1.5rem;
 }
 
-
-
 .social-share-btns-container {
-  overflow: hidden;
-  position: absolute;
-  left: 0;
-  font-size: 0;
-  top: 50%;
-  margin: 10px 0;
-  text-align: center;
-  width: 100%;
-  z-index: 111;
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    font-size: 0;
+    top: 50%;
+    margin: 10px 0;
+    text-align: center;
+    width: 100%;
+    z-index: 111;
 }
 
-
 .social-share-btns {
-  display: inline-block;
-  overflow: hidden;
-  .share-btn {
-    float: left;
-    margin: 20px 5px;
-    padding: 8px 16px;
-    border-radius: 3px;
-    color: #fff;
-    font-size: 14px;
-    line-height: 18px;
-    vertical-align: middle;
-    @include transition(background 0.2s ease-in-out);
+    display: inline-block;
+    overflow: hidden;
+    .share-btn {
+        float: left;
+        margin: 20px 5px;
+        padding: 8px 16px;
+        border-radius: 3px;
+        color: #fff;
+        font-size: 14px;
+        line-height: 18px;
+        vertical-align: middle;
+        @include transition(background 0.2s ease-in-out);
 
-    i {
-      margin-right: 5px;
-      display: inline-block;
-      font-size: 18px;
-      vertical-align: middle;
+        i {
+            margin-right: 5px;
+            display: inline-block;
+            font-size: 18px;
+            vertical-align: middle;
+        }
     }
-  }
 }
 
 // Colors
 .share-btn {
-  background-color: #95a5a6;
-  &:hover {
-    background-color: darken(#95a5a6, 10%);
-  }
+    background-color: #95a5a6;
+    &:hover {
+        background-color: darken(#95a5a6, 10%);
+    }
 }
 .share-btn-twitter {
-  background-color: #00aced;
-  &:hover {
-    background-color: darken(#00aced, 10%);
-  }
+    background-color: #00aced;
+    &:hover {
+        background-color: darken(#00aced, 10%);
+    }
 }
 .share-btn-facebook {
-  background-color: #3b5998;
-  &:hover {
-    background-color: darken(#3b5998, 10%);
-  }
+    background-color: #3b5998;
+    &:hover {
+        background-color: darken(#3b5998, 10%);
+    }
 }
 .share-btn-linkedin {
-  background-color: #007bb6;
-  &:hover {
-    background-color: darken(#007bb6, 10%);
-  }
+    background-color: #007bb6;
+    &:hover {
+        background-color: darken(#007bb6, 10%);
+    }
 }
 .share-btn-reddit {
-  background-color: #ED001C;
-  &:hover {
-    background-color: darken(#ED001C, 10%);
-  }
+    background-color: #ed001c;
+    &:hover {
+        background-color: darken(#ed001c, 10%);
+    }
 }
 
 .share-btn-mail {
-	background-color: #f1c40f;
-	&:hover {
-		background-color: darken(#f1c40f, 5%);
-	}
+    background-color: #f1c40f;
+    &:hover {
+        background-color: darken(#f1c40f, 5%);
+    }
 }
 
 .main-page-attend {
@@ -190,24 +186,18 @@ footer {
 }
 
 .attending-events {
-  float: right;
-  width: 30%;  
-  padding: 10px;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
+    float: right;
+    width: 30%;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
 .cancel-btn {
-  font-size: 20px;
+    font-size: 20px;
 }
 
 .cancel-btn:hover {
-  color: #007bb6;
+    color: #007bb6;
 }
-
-
-
-
-
-
