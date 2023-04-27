@@ -1,5 +1,4 @@
- 
-<nav class="navbar navbar-expand-lg bg-secondary">
+<nav class="navbar navbar-expand-lg bg-lightblue">
     <div clanass="container-fluid">
         <button
             class="navbar-toggler"
@@ -17,27 +16,25 @@
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="/">Home
+                    <a class="nav-link text-dark" href="/">Home
                     </a>
                 </li>
 
-               
-                 <li class="nav-item">
+                <li class="nav-item">
                     <a
-                        class="nav-link active text-white"
+                        class="nav-link active text-dark"
                         aria-current="page"
                         href="/auth/logout"
                     >Log out</a>
                 </li>
 
+                <li class="nav-item">
+                    <a class="nav-link text-dark" href="/profile"> Profile </a>
+
+                </li>
 
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="/profile">   Profile   </a>
-                    
-                </li>
-                
-                <li class="nav-item">
-                    <a class="nav-link text-white" href="/runRoute">See all
+                    <a class="nav-link text-dark" href="/runRoute">See all
                         routes</a>
                 </li>
             </ul>
@@ -46,9 +43,31 @@
     </div>
 </nav>
 
+{{#if runRoutes.length}}
+    <div class="main-page-routes">
+        {{#each runRoutes}}
+            <div class="all-the-cards">
+                <div class="card">
+                    <img
+                        src="{{image}}"
+                        class="card-img-top"
+                        alt="..."
+                        width="50px"
+                    />
+                    <div class="card-body">
+                        <h3 class="card-title">{{title}}</h3>
+                        <h6>Date: {{moment date "ddd, MMM DD YYYY"}}</h6>
+                        <h6>Time:{{time}}</h6>
+                        <h6>Starting point:{{startingPoint}}</h6>
+                        <h6>Distance:{{distance}}</h6>
+                        <h6>Duration:{{duration}}</h6>
+                        <h6>Location:{{location}}</h6>
+                        <h6>Pace:{{pace}}</h6>
+                        <h6>Difficulty level:{{difficultyLevel}}</h6>
+                        <h6>Organizer:{{organize}}
 
-
-
+  </div>
+        </div>
 
 
  {{#if runRoutes.length}}
@@ -72,12 +91,11 @@
            <a href="/attend/{{_id}}" class="btn btn-primary">Attend</a>
            </div>
         </div>
-            </div>
-      </div>
-      {{/each}}
-      </div>
-  
-{{else}}
-  <p>No results found</p>
-{{/if}}
 
+            </div>
+        {{/each}}
+    </div>
+
+{{else}}
+    <p>No results found</p>
+{{/if}}
