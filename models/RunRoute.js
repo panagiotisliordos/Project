@@ -76,6 +76,10 @@ const RunRouteSchema = new Schema({
         type: String,
         ref: "User",
     },
+    attendees: {
+        type: Number,
+        default: 10,
+    }
 });
 
 const RunRoute = mongoose.model("RunRoute", RunRouteSchema);

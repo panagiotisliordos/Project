@@ -60,10 +60,24 @@
                         <a href="/runRoute/add" class="btn btn-dark">Add a new
                             route
                             {{user.username}}</a>
+                        
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div> 
+
+</div>
+<div class="attending-events">
+    <h2>Your upcoming events:</h2>
+    {{#each user.attendingEvent}}
+        <p>{{this.title}}</p>
+        <form method="POST" action="/cancel-attendance">
+            <input type="hidden" name="event" value="{{this._id}}">
+            <button type="submit" class="cancel-btn">cancel</button>
+        </form>
+    {{/each}}
+</div>
+
+
 
