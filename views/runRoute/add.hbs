@@ -1,64 +1,67 @@
-<h1>Add a route</h1>
-<form action="/runRoute" method="post">
-
-   <div class="container-fluid">
-  <div class="row">
-    <div class="col-md-6">
-      <table class="table">
-        <tbody>
-          <tr>
-            <td><label for="image">Image:</label></td>
-            <td><input type="text" class="form-control" id="image" name="image" placeholder="Paste an img url here"></td>
-          </tr>
-          <tr>
-            <td><label for="title">Title:</label></td>
-            <td><input type="text" class="form-control" id="title" name="title"></td>
-          </tr>
-          <tr>
-            <td><label for="date">Date:</label></td>
-            <td><input type="date" class="form-control" id="date" name="date"></td>
-          </tr>
-          <tr>
-            <td><label for="time">Time:</label></td>
-            <td><input type="text" class="form-control" id="time" name="time"></td>
-          </tr>
-          <tr>
-            <td><label for="location">Location:</label></td>
-            <td><input type="text" class="form-control" id="location" name="location"></td>
-          </tr>
-          <tr>
-            <td><label for="startingPoint">Starting point:</label></td>
-            <td><input type="text" class="form-control" id="startingPoint" name="startingPoint"></td>
-          </tr>
-          <tr>
-            <td><label for="distance">Distance:</label></td>
-            <td><input type="text" class="form-control" id="distance" name="distance"></td>
-          </tr>
-          <tr>
-            <td><label for="duration">Duration:</label></td>
-            <td><input type="text" class="form-control" id="duration" name="duration"></td>
-          </tr>
-          <tr>
-            <td><label for="pace">Pace:</label></td>
-            <td><input type="text" class="form-control" id="pace" name="pace"></td>
-          </tr>
-          <tr>
-            <td><label for="difficultyLevel">Difficulty level:</label></td>
-            <td><input type="text" class="form-control" id="difficultyLevel" name="difficultyLevel"></td>
-          </tr>
-          <tr>
-            <td><label for="organizer">Organizer:</label></td>
-            <td><input type="text" class="form-control" id="organizer" name="organizer"></td>
-          </tr>
-        </tbody>
-      </table>
-      <button type="submit" class="btn btn-primary">Add this route</button>
-    </div>
-    <div class="col-md-6">
-      <img src="your-image-source.jpg" class="img-fluid" alt="Your Image">
-    </div>
-  </div>
-</div>
-
-
-</form>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Route</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+  </head>
+  <body style="background-image: url('https://images.unsplash.com/photo-1613936360976-8f35cf0e5461?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80'); background-size: cover;">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-6 bg-light rounded mt-5 p-3">
+          <h1 class="text-center mb-3">Add a route</h1>
+          <form action="/runRoute" method="post">
+            <table class="table" style="background-color: #f0f8ff">
+              <tbody>
+                <tr>
+                 <td><label for="image"><strong>Image</strong></label></td>
+                     <td><input type="text" class="form-control" id="image" name="image" placeholder="Paste an img url here"></td>
+                  </tr>
+                  <tr>
+                     <td><label for="title"><strong>Title</strong></label></td>
+                     <td><input type="text" class="form-control" id="title" name="title"></td>
+                  </tr>
+                  <tr>
+                     <td><label for="date"><strong>Date</strong></label></td>
+                     <td><input type="date" class="form-control" id="date" name="date"></td>
+                  </tr>
+                  <tr>
+                     <td><label for="time"><strong>Time</strong></label></td>
+                     <td><input type="text" class="form-control" id="time" name="time"></td>
+                  </tr>
+                  <tr>
+                     <td><label for="location"><strong>Location</strong></label></td>
+                     <td><input type="text" class="form-control" id="location" name="location"></td>
+                  </tr>
+                  <tr>
+                     <td><label for="startingPoint"><strong>Starting point</strong></label></td>
+                     <td><input type="text" class="form-control" id="startingPoint" name="startingPoint"></td>
+                  </tr>
+                  <tr>
+                     <td><label for="distance"><strong>Distance</strong></label></td>
+                     <td><input type="text" class="form-control" id="distance" name="distance"></td>
+                  </tr>
+                  <tr>
+                     <td><label for="duration"><strong>Duration</strong></label></td>
+                     <td><input type="text" class="form-control" id="duration" name="duration"></td>
+                  </tr>
+                  <tr>
+                     <td><label for="pace"><strong>Pace</strong></label></td>
+                     <td><input type="text" class="form-control" id="pace" name="pace"></td>
+                  </tr>
+                  <tr>
+                     <td><label for="difficultyLevel"><strong>Difficulty level</strong></label></td>
+                     <td><input type="text" class="form-control" id="difficultyLevel" name="difficultyLevel"></td>
+                  </tr>
+                  <tr>
+                     <td><label for="organizer"><strong>Organizer</strong></label></td>
+                     <td><input type="text" class="form-control" id="organizer" name="organizer"></td>
+                </tr>
+              </tbody>
+            </table>
+            <button type="submit" class="btn btn-primary">Add this route</button>
+          </form>
+        </div>
+      </div>
+   
