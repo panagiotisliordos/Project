@@ -38,9 +38,7 @@
 
 <form class="d-flex" role="search" method="POST" action="/runRoute/search">
 <input class="form-control me-2" type="text" placeholder="Location" aria-label="Location" name="location">
-  <label class="sr-only" for="distanceInput"></label>
-  <input type="string" class="form-control mr-sm-2" style="width: 110px; margin-right: 10px;" id="distanceInput" name="distance" placeholder="Distance">
-  <label class="sr-only" for="dateInput"></label>
+    <label class="sr-only" for="dateInput"></label>
   <input type="date" class="form-control mr-sm-2" style="width: 235px; margin-right: 10px;" id="dateInput" name="date">
   <button class="btn btn-outline-dark" type="submit">Search</button>
 </form>
@@ -65,16 +63,18 @@
            <img src="{{image}}" class="card-img-top" alt="..." width="50px" >
         <div class="card-body">
             <h3 class="card-title">{{title}}</h3>
-            <h6>Date: {{date}}</h6>
-            <h6>Time:{{time}}</h6>
-            <h6>Starting point:{{startingPoint}}</h6>
-            <h6>Distance:{{distance}}</h6>
-            <h6>Duration:{{duration}}</h6>
-            <h6>Location:{{location}}</h6>
-            <h6>Pace:{{pace}}</h6>
-            <h6>Difficulty level:{{difficultyLevel}}</h6>
-            <h6>Organizer:{{organizer}}</h6>
+            <h6><strong>Date:</strong> {{moment date "ddd, MMM DD YYYY"}}</h6>
+            <h6><strong>Time:</strong> {{time}}</h6>
+            <h6><strong>Starting point:</strong> {{startingPoint}}</h6>
+            <h6><strong>Distance:</strong> {{distance}}</h6>
+            <h6><strong>Duration:</strong> {{duration}}</h6>
+            <h6><strong>Location:</strong> {{location}}</h6>
+            <h6><strong>Pace:</strong> {{pace}}</h6>
+            <h6><strong>Difficulty level:</strong> {{difficultyLevel}}</h6>
+            <h6><strong>Organizer:</strong> {{organizer}}</h6>
+             <div class="text-center">
             <a href="/attend/{{_id}}" class="btn btn-primary">Attend</a>
+            </div>
         </div>
             </div>
 
