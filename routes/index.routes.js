@@ -2,6 +2,8 @@ const express = require("express");
 const router = express.Router();
 const { isLoggedIn } = require("../middleware/route-guard");
 const RunRoute = require("../models/RunRoute");
+const User = require("../models/User.model");
+
 
 const data = [
     {
@@ -16,6 +18,7 @@ const data = [
         pace: "6:30",
         difficultyLevel: "beginner",
         organizer: "Sam",
+        attendees: 10
     },
     {
         image: "https://www.tip-berlin.de/wp-content/uploads/2021/02/imago0101528850h-1-scaled.jpg",
@@ -29,6 +32,7 @@ const data = [
         pace: "6:00",
         difficultyLevel: "beginner",
         organizer: "Julia",
+        attendees: 10
     },
     {
         image: "https://ychef.files.bbci.co.uk/976x549/p0dbb76p.jpg",
@@ -42,6 +46,7 @@ const data = [
         pace: "6:30",
         difficultyLevel: "beginner",
         organizer: "Tom",
+        attendees: 10
     },
     {
         image: "https://upload.wikimedia.org/wikipedia/commons/b/be/Berlin-_Bundestag_by_the_Spree_-_3570.jpg",
@@ -55,6 +60,7 @@ const data = [
         pace: "7:00",
         difficultyLevel: "intermediate",
         organizer: "Maria",
+        attendees: 10
     },
     {
         image: "https://lichotaphoto.files.wordpress.com/2016/08/berlin-kreuzberg-viktoriapark-2.jpg?w=768",
@@ -68,6 +74,7 @@ const data = [
         pace: "7:30",
         difficultyLevel: "intermediate",
         organizer: "Mark",
+        attendees: 10
     },
     {
         image: "https://www.visitberlin.de/system/files/styles/visitberlin_content_image_medium_visitberlin_mobile_1x/private/image/Schloss_Charlottenburg_02_c_Scholvien_DL_PPT_1.jpg?itok=f9GCKdZ_",
@@ -81,6 +88,7 @@ const data = [
         pace: "6:00",
         difficultyLevel: "beginner",
         organizer: "Nina",
+        attendees: 10
     },
     {
         image: "https://media-cdn.tripadvisor.com/media/photo-s/10/57/af/09/tiergarten-1.jpg",
@@ -94,6 +102,7 @@ const data = [
         pace: "6:30",
         difficultyLevel: "beginner",
         organizer: "Peter",
+        attendees: 10
     },
     {
         image: "https://www.zoo-berlin.de/fileadmin/_processed_/f/e/csm_Flusspferdhaus_Location_f38c8f5b95.jpg",
@@ -107,6 +116,7 @@ const data = [
         pace: "7:30",
         difficultyLevel: "beginner-intermediate",
         organizer: "Ben",
+        attendees: 10
     },
     {
         image: "https://media.timeout.com/images/101285069/750/422/image.jpg",
@@ -120,6 +130,7 @@ const data = [
         pace: "7:45",
         difficultyLevel: "intermediate-advanced",
         organizer: "Lisa",
+        attendees: 10
     },
     {
         image: "https://upload.wikimedia.org/wikipedia/commons/a/a4/Havel_Berlin.jpg",
@@ -133,6 +144,7 @@ const data = [
         pace: "8:00",
         difficultyLevel: "advanced",
         organizer: "Tom",
+        attendees: 10
     },
     {
         image: "https://www.visitberlin.de/system/files/styles/visitberlin_hero_visitberlin_desktop_2x/private/image/Mauerpark_per%20Rad_c_visitBerlin%3B%20Foto_Rasmus_KlaRas-Verlag%20%281%29_DL_PPT_0.jpg?h=48ee214e&itok=CeyQm-kR",
@@ -146,6 +158,7 @@ const data = [
         pace: "6:30",
         difficultyLevel: "beginner-intermediate",
         organizer: "Jenny",
+        attendees: 10
     },
     {
         image: "https://cdn.tourbytransit.com/berlin/images/Berlin-Dahlem-Botanical-Garden.jpg",
@@ -159,6 +172,7 @@ const data = [
         pace: "7",
         difficultyLevel: "beginner-intermediate",
         organizer: "bo",
+        attendees: 10
     },
 ];
 
@@ -194,7 +208,10 @@ router.get("/profile", isLoggedIn, (req, res, next) => {
     // Access logged in user
     const user = req.session.user;
 
-    res.render("profile", { user: user });
+    User.findById(user._id)
+    .populate('attendingEvent')
+    .then(userFromDB => 
+        res.render("profile", { user: userFromDB }))
 });
 
 

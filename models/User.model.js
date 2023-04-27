@@ -30,6 +30,11 @@ const userSchema = new Schema(
             type: String,
             enum: ["Female", "Male", "Other"],
         },
+
+        attendingEvent: [{
+            type: Schema.Types.ObjectId,
+            ref: "RunRoute"
+        }]
     },
     {
         // this second object adds extra properties: `createdAt` and `updatedAt`

@@ -1,32 +1,47 @@
 
-    <h1>{{dataFromDB.title}}</h1>
-<div class="main-page-routes">
- 
+    <h1>{{eventFromDB.title}}</h1>
+<div class="main-page-attend">
     <div class="attend-card">
-            <div class="attend-card" width="200" height="200" style="border:1px solid">
-           <img src="{{dataFromDB.image}}" class="card-img-top" alt="..." width="50px" >
+        <div class="attend-card" width="200" height="200" style="border:1px solid">
+           <img src="{{eventFromDB.image}}" class="card-img-top" alt="..." width="50px" >
         <div class="card-body">
             <h6>
-            Welcome to our run. We meet at {{dataFromDB.time}} with a starting point on {{dataFromDB.startingPoint}} with approximate distance of {{dataFromDB.distance}} with a duration of {{dataFromDB.duration}}. Our pace is {{dataFromDB.pace}} and this is {{dataFromDB.difficultyLevel}} level. This run is organized by {{dataFromDB.organizer}}. <br>
+                <br>
+                <br>
+                <br>
+                <br>
+            Welcome to our run. We meet at {{eventFromDB.time}} with a starting point on {{eventFromDB.startingPoint}} with approximate distance of {{eventFromDB.distance}} with a duration of {{eventFromDB.duration}}. Our pace is {{eventFromDB.pace}} and this is {{eventFromDB.difficultyLevel}} level. This run is organized by {{eventFromDB.organizer}}. <br>
             <br>
             Please read our liability insurance policy.
             </h6>
             <br>
             <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <a href="/profile" class="btn-confirm">confirm your attendance</a>
+            <h5>free spots: {{availableAttendees}}</h5>
+            <form method="POST" action="/confirm-attendance">
+                <input type="hidden" name="event" value="{{eventFromDB._id}}">
+                <button type="submit">confirm your attendance</button>
+            </form>
+            <div class="social-share-btns-container">
+    <div class="social-share-btns">
+        <a class="share-btn share-btn-twitter" href="https://twitter.com/intent/tweet?text=https://codepen.io/marko-zub/#" rel="nofollow" target="_blank">
+        <i class="ion-social-twitter"></i></a>
+        <a class="share-btn share-btn-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://codepen.io/marko-zub/#" rel="nofollow" target="_blank">
+        <i class="ion-social-facebook"></i></a>
+        <a class="share-btn share-btn-linkedin" href="https://www.linkedin.com/cws/share?url=https://codepen.io/marko-zub/#" rel="nofollow" target="_blank">
+        <i class="ion-social-linkedin"></i></a>
+        <a class="share-btn share-btn-reddit" href="http://www.reddit.com/submit?url=https://codepen.io/marko-zub/&amp;title=Marko+Zub+codepen" rel="nofollow" target="_blank"><i class="ion-social-reddit"></i></a>
+        <a class="share-btn share-btn-mail" href="mailto:?subject=Look Fun Codepen Account&amp;body=https://codepen.io/marko-zub/#" rel="nofollow" target="_blank" title="via email"><i class="ion-paper-airplane"></i></a>
+    </div>
+</div>
+
         </div>
-            </div>
+        </div>
 
     </div>
 
 </div>
 
-<footer>all rights reserved! no joking!</footer>
+
 
 
 
