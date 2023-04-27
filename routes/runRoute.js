@@ -117,11 +117,8 @@ router.post("/runRoute/search", (req, res, next) => {
         next(err);
 
       });
-      res.render("runRoute/searchResults", { runRoutes });
-    })
-    .catch((err) => {
-      next(err);
-    });
+    
+    
 });
 
 router.get("/attend/:id", (req, res, next) => {
