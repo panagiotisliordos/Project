@@ -1,3 +1,4 @@
+
 <nav class="navbar navbar-expand-lg bg-lightblue">
     <div clanass="container-fluid">
         <button
@@ -36,24 +37,129 @@
                 </li>
             </ul>
 
+    <!-- Bootstrap CSS or custom stylesheets can be included here -->
+    <style>
+        /* Styling for navbar */
+        .navbar {
+            background-color: #444;
+            /* Add more styles as needed */
+        }
+
+        /* Styling for login form */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: aliceblue;
+        }
+
+        .container {
+            width: 500px;
+            margin: auto;
+            margin-top: 100px;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.3);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            margin-bottom: 20px;
+        }
+
+        input[type="submit"] {
+            background-color: #1292e2;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-weight: bold; /* Added bold font style to submit button */
+        }
+
+        input[type="submit"]:hover {
+            background-color: #1292e2;
+        }
+
+        .error {
+            color: red;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar section -->
+    <nav class="navbar navbar-expand-lg bg-secondary">
+        <div clanass="container-fluid">
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarTogglerDemo03"
+                aria-controls="navbarTogglerDemo03"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+            >
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="/">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a
+                            class="nav-link active text-white"
+                            aria-current="page"
+                            href="/auth/signup"
+                        >Sign Up</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-    </div>
-</nav>
+    </nav>
+
+    <!-- Login form section -->
+    <div class="container">
+        <h1>Login</h1>
+        <form action="/auth/login" method="POST">
+            <div>
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+
+            <div>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+
+            <div>
+                <button type="submit" class="btn btn-primary">Login</button>
+        </div>
+    </form>
+
+    {{#if message}}
+        <h3 class="error">{{message}}</h3>
+    {{/if}}
+</div>
 
 
 
-<h1>Login</h1>
-<form action="/auth/login" method="POST">
-    <label for="username">Username: </label>
-    <input type="text" name="username" />
 
-    <label for="password">Password: </label>
-    <input type="password" name="password" />
-
-    <button type="submit">Login</button>
-
-</form>
-
-{{#if message}}
-    <h3 class="error">{{message}}</h3>
-{{/if}}
