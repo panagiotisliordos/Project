@@ -20,7 +20,7 @@
             <h5>free spots: {{availableAttendees}}</h5>
             <form method="POST" action="/confirm-attendance">
                 <input type="hidden" name="event" value="{{eventFromDB._id}}">
-                <button type="submit">confirm your attendance</button>
+                <button class="btn-confirm-and-cancel-attendance" type="submit">confirm your attendance</button>
             </form>
             <div class="social-share-btns-container">
     <div class="social-share-btns">
