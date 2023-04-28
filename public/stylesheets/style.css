@@ -61,21 +61,44 @@ p {
     justify-content: center;
     align-items: center;
     background-image: url("https://cdn.discordapp.com/attachments/1099951280627122176/1100711622307225671/jozsef-hocza-BTur1pF9FR0-unsplash.jpg");
-    height: 100vh;
+    height: 75vh;
+    width: 150vh;
     background-position: center;
     background-size: cover;
+    margin: auto;
+}
+.attending-events {
+    background-color: #00aced;
+    width: 100%;
+    /* padding: 10px; */
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    /* flex: 1; */
+    text-align: center;
+    margin-top: 20px;
 }
 .runandfun {
     color: aliceblue;
-    font-size: 80px;
+    font-size: 60px;
     font-style: normal;
 }
+
+.profile-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
 .profileInfo {
-    background-color: #f8f8f8;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 20px;
+    /* background-color: #f8f8f8; */
+    /* border: 1px solid #ddd; */
+    /* border-radius: 5px; */
+    /* padding: 15px; */
     text-align: center;
+    margin-top: 10px;
+    /* flex: 1; */
 }
 .profileInfo h6 {
     font-size: 2em;
@@ -84,6 +107,7 @@ p {
 }
 .container {
     text-align: center;
+    text-decoration: none;
 }
 
 .attend-card {
@@ -185,15 +209,6 @@ footer {
     justify-content: center;
 }
 
-.attending-events {
-    float: right;
-    width: 30%;
-    padding: 10px;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-}
-
 .cancel-btn {
     font-size: 20px;
 }
@@ -201,3 +216,113 @@ footer {
 .cancel-btn:hover {
     color: #007bb6;
 }
+
+a[href="#intro"] {
+    font-size: 20px;
+    text-decoration: none;
+}
+a[href="#intro"]:hover {
+    font-size: 23px;
+    color: #00aced;  
+}
+
+a[href="#liability"] {
+    font-size: 20px;
+    text-decoration: none;
+}
+a[href="#liability"]:hover {
+    font-size: 23px;
+    color: #00aced;  
+}
+
+a[href="#random"] {
+    font-size: 20px;
+    text-decoration: none;
+}
+a[href="#random"]:hover {
+    font-size: 23px;
+    color: #00aced;  
+}
+  a[href="/"] {
+    font-size: 25px;
+}
+  a[href="/auth/signup"] {
+    font-size: 25px;
+}
+  a[href="/auth/login"] {
+    font-size: 25px;
+}
+  a[href="/auth/logout"] {
+    font-size: 25px;
+}
+  a[href="/profile"] {
+    font-size: 25px;
+}
+  a[href="/runRoute"] {
+    font-size: 25px;
+}
+  a[href="/runRoute/add"] {
+    font-size: 25px;
+}
+
+a[href="/"]:hover {
+    font-size: 27px;
+    color: #00aced; 
+}
+  a[href="/auth/signup"]:hover {
+    font-size: 27px;
+    color: #00aced;
+}
+  a[href="/auth/login"]:hover {
+    font-size: 27px;
+    color: #00aced;
+}
+  a[href="/auth/logout"]:hover {
+    font-size: 27px;
+    color: #00aced;
+}
+  a[href="/profile"]:hover {
+    font-size: 27px;
+    color: #00aced;
+}
+  a[href="/runRoute"]:hover {
+    font-size: 27px;
+    color: #00aced;
+}
+  a[href="/runRoute/add"]:hover {
+    font-size: 27px;
+    color: #00aced;
+}
+
+.btn-confirm-and-cancel-attendance {
+    color: aliceblue;
+    text-decoration: none;
+    background-color: #007bb6;
+    border: none;
+    font-size: 15px;
+    padding: 3px;
+    border-radius: 4px;
+}
+
+.btn-confirm-and-cancel-attendance:hover {
+    font-size: 16px;
+}
+
+  .attending-events .upcoming-run {
+    font-size: 20px;
+  }
+
+ .attending-events  .your-upcoming-events {
+    font-size: 25px;
+    margin-top: 10px;
+  }
+
+  .col-lg-4  .intro-text {
+    font-size: 25px !important;
+    text-align: center !important;
+  }
+
+  .col-md-4  .liability-text {
+    font-size: 25px !important;
+    text-align: center !important;
+  }

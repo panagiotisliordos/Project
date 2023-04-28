@@ -18,12 +18,7 @@
                     <a class="nav-link text-dark" href="/">Home
                     </a>
                 </li>
-
-                
                 </li>
-                
-                
-          
             <li class="nav-item">
                     <a class="nav-link text-dark" href="/runRoute/add">Add a route
                         </a>
@@ -31,31 +26,18 @@
                 
                 <li class="nav-item">
                     <a class="nav-link text-dark" href="/profile">  {{user.username}}'s profile   </a>
-                    
                 </li>
-                
             </ul>
-
 <form class="d-flex" role="search" method="POST" action="/runRoute/search">
 <input class="form-control me-2" type="text" placeholder="Location" aria-label="Location" name="location">
     <label class="sr-only" for="dateInput"></label>
   <input type="date" class="form-control mr-sm-2" style="width: 235px; margin-right: 10px;" id="dateInput" name="date">
   <button class="btn btn-outline-dark" type="submit">Search</button>
-</form>
-
-
-
-
-
-
-
-
-              
+</form>              
         </div>
     </div>
 </nav>
-
-    <h1>All the routes</h1>
+    <h1>Running routes in Berlin</h1>
 <div class="main-page-routes">
     {{#each runRouteCopy}}
     <div class="all-the-cards">
@@ -63,7 +45,7 @@
            <img src="{{image}}" class="card-img-top" alt="..." width="50px" >
         <div class="card-body">
 
-            <h3 class="card-title">{{title}}</h3>
+            <h4 class="card-title">{{title}}</h4>
             <h6><strong>Date:</strong> {{moment date "ddd, MMM DD YYYY"}}</h6>
             <h6><strong>Time:</strong> {{time}}</h6>
             <h6><strong>Starting point:</strong> {{startingPoint}}</h6>
@@ -75,50 +57,11 @@
             <h6><strong>Organizer:</strong> {{organizer}}</h6>
             <h6><strong>Maximum Participants:</strong> {{attendees}}</h6>
              <div class="text-center">
-            <a href="/attend/{{_id}}" class="btn btn-primary">Attend</a>
+            <a href="/attend/{{_id}}" class="btn btn-primary">See details</a>
             </div>
-
         </div>
             </div>
 
     </div>
 {{/each}}
 </div>
-<!--<a href="/runRoute/add">Add a route</a>
-<a href="/profile">User profile</a>-->
-
-{{!-- <div class="card" style="width: 18rem;">
-    <img src="{{image}}" class="card-img-top" alt="..." >
-    <div class="card-body">
-    <h4 class="card-title">{{title}}</h4>
-    <h2>Date: {{date}}</h2>
-        <h4>Time:{{time}}</h4>
-        <h4>Starting point:{{startingPoint}}</h4>
-        <h4>Distance:{{distance}}</h4>
-        <h4>Duration:{{duration}}</h4>
-        <h4>Location:{{location}}</h4>
-        <h4>Pace:{{pace}}</h4>
-        <h4>Difficulty level:{{difficultyLevel}}</h4>
-        <h4>Organizer:{{organizer}}</h4>
-    <a href="#" class="btn btn-primary">Attend</a>
-  </div>
-</div> --}}
-
-
-    {{!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> --}}
-
-      {{!-- <div class="card">
-        <h2>Title: {{title}}</h2>
-        <img src="{{image}}" class="card-img-top" width="10px">
-        <h2>Date: {{date}}</h2>
-        <h2>Time:{{time}}</h2>
-        <h2>Location:{{location}}</h2>
-        <h2>Starting point:{{startingPoint}}</h2>
-        <h2>Distance:{{distance}}</h2>
-        <h2>Duration:{{duration}}</h2>
-        <h2>Pace:{{pace}}</h2>
-        <h2>Difficulty level:{{difficultyLevel}}</h2>
-        <h2>Organizer:{{organizer}}</h2>
-        <!--  <a href="/runRoute/{{_id}}/delete">Delete this route </a>-->
-    </div> --}}
-

@@ -52,14 +52,33 @@
                     />
                     <div class="profileInfo">
                         <h3 class="profileInfo">Hello {{user.username}}!!</h3>
-                        <h6>Personal info:</h6>
-                        <h6>Age: {{user.age}}</h6>
-                        <h6>Fitness level: {{user.fitnessLevel}}</h6>
+                        <h4>Personal info:</h4>
+                        <h4>Age: {{user.age}}</h4>
+                        <h4>Fitness level: {{user.fitnessLevel}}</h4>
 
                         <a href="/runRoute/add" class="btn btn-dark">Add a new
                             route
                             {{user.username}}</a>
 
+                        <div class="attending-events">
+                            <h5 class="your-upcoming-events">Your upcoming
+                                events:</h5>
+                            {{#each user.attendingEvent}}
+                                <h6 class="upcoming-run">{{this.title}}</h6>
+                                <form method="POST" action="/cancel-attendance">
+                                    <input
+                                        type="hidden"
+                                        name="event"
+                                        value="{{this._id}}"
+                                    />
+                                    <button
+                                        class="btn-confirm-and-cancel-attendance"
+                                        type="submit"
+                                        class="cancel-btn"
+                                    >cancel</button>
+                                </form>
+                            {{/each}}
+                        </div>
                     </div>
 
                 </div>
@@ -67,14 +86,4 @@
         </div>
     </div>
 
-</div>
-<div class="attending-events">
-    <h2>Your upcoming events:</h2>
-    {{#each user.attendingEvent}}
-        <p>{{this.title}}</p>
-        <form method="POST" action="/cancel-attendance">
-            <input type="hidden" name="event" value="{{this._id}}" />
-            <button type="submit" class="cancel-btn">cancel</button>
-        </form>
-    {{/each}}
 </div>
